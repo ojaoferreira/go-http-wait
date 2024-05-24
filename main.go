@@ -19,6 +19,10 @@ func main() {
 		json.NewEncoder(w).Encode(map[string]string{"message": "we got it after " + param + " seconds"})
 	})
 
+	http.HandleFunc("/server/error", func(w http.ResponseWriter, r *http.Request) {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	})
+
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(map[string]string{"status": "Ok"})
 	})

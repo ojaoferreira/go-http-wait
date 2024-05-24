@@ -5,6 +5,7 @@ So for this example I created a simple web server which has 2 different endpoint
 
 Namely:
 - /timeout/second/{second}
+- /server/error
 - /health
 
 ## Building the container
